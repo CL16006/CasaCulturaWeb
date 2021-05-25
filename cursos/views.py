@@ -25,7 +25,13 @@ def verCursos(request):
 #alberto
 def inscribirse(request):
 
-    return HttpResponse("Inscribirse")
+    template = loader.get_template('cursos/inscribirse.html')
+    context = {
+
+    }
+    return HttpResponse(template.render(context, request))
+
+
 #yami
 def contacto(request):
 
