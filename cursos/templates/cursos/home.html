@@ -2,10 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
 </head>
 <body>
   <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
     {% include "cursos/menu.html" %}
+    {% load static %}
+  <h1>HOla</h1>
+  {% if anuncios_list %}
+  
+  
+  
+  <div class="p-3 mb-2 bg-light text-dark">
+    <div class="p-3 mb-2 bg-secondary text-white">
+        <h1>Casa de la Cultura Texistepeque</h1>
+        <div class="p-3 mb-2 bg-light text-dark">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="{% static 'casaCultura.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'logo.png' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="{% static 'casaCultura.jpg' %}" class="d-block w-100" alt="..." width="400px" height="500px">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+
+  
+  <ul>
+  {% for anuncio in anuncios_list %}
+      <h3>{{ anuncio.encabezado }}</h3>
+      <h6>{{anuncio.fecha_publicacion}}</h6>
+      <img src="C:\Users\Admin\Documents\DjangoProjects\BBDDPrueva\{{anuncio.imagen}}"/>
+      <p>{{anuncio.texto}}</p>
+
+  {% endfor %}
+  </ul>
+{% else %}
+  <p>No hay publicaciones.</p>
+{% endif %}
+    
 </body>
 </html>
