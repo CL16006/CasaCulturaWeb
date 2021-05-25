@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>anuncios</title>
+</head>
+<body>
+{% if anuncios_list %}
+    <ul>
+    {% for anuncio in anuncios_list %}
+        <h3>{{ anuncio.encabezado }}</h3>
+        <h6>{{anuncio.fecha_publicacion}}</h6>
+        <img src="C:\Users\Admin\Documents\DjangoProjects\BBDDPrueva\{{anuncio.imagen}}"/>
+        <p>{{anuncio.texto}}</p>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay publicaciones.</p>
+{% endif %}
+</body>
+</html>
