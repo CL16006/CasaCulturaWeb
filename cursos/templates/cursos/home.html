@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
-<body>
   <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
-    {% include "cursos/menu.html" %}
-    {% load static %}
+{% extends "cursos/menu.html" %}
+
+{% load static %}
+
+{% block title %}listado anuncios{% endblock %}
+
+{% block content %}
+
     
 
-  
+
   
   
   <div class="p-3 mb-2 bg-light text-dark">
@@ -62,17 +61,17 @@
           <h6 class="card-text">{{anuncio.fecha_publicacion}}</h6>
           <p class="card-text">{{anuncio.texto}}</p>
           
+
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p>No hay publicaciones.</p>
+      
+        {% endif %}
         </div>
       </div>
       
 
-  {% endfor %}
-  </ul>
-  {% else %}
-  <p>No hay publicaciones.</p>
-
-  {% endif %}
+ 
     
-
-</body>
-</html>
+{% endblock %}
