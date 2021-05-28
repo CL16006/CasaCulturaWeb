@@ -6,10 +6,14 @@
 </head>
 <body>
   <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
-    {% include "cursos/menu.html" %}
-    {% load static %}
+  {% extends "cursos/menu.html" %}
+  {% load static %}
+  {% block title %}contacto{% endblock %}
+
+  {% block content %}
     <h1 align= "center">Contacto</h1>
 
+    
     <div class="container" >
       <div class="row gy-5">
           <div class="p-3" style="background-color:rgb(158, 202, 223)"><h4>Direccion <img src="{% static 'ubicacion.png' %}" class="img-thumbnail" alt=""  width="35px" height="35px" align="rigth"></h4> <br> 
