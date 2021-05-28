@@ -12,8 +12,12 @@ def index(request):
     return HttpResponse(template.render(context, request))
 #yami
 def home(request):
-
-    return HttpResponse("inicio")
+    anuncios=anuncio.objects.order_by('fecha_publicacion')[:]
+    template = loader.get_template('cursos/home.html')
+    context = {
+        'anuncios_list': anuncios,
+    }
+    return HttpResponse(template.render(context, request))
 #fatima
 def verCursos(request):
     lista_cursos=cursos.objects.order_by('nombre')[:]
@@ -29,7 +33,13 @@ def inscribirse(request):
 #yami
 def contacto(request):
 
-    return HttpResponse("Contacto")
+    template = loader.get_template('cursos/contacto.html')
+    context = {
+        
+    }
+     
+    return HttpResponse(template.render(context, request))
+    
 #yesica
 def quienesSomos(request):
 
