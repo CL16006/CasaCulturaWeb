@@ -8,35 +8,88 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>
+
+      {% block title%} {% endblock %}
+
+    </title>
+
   </head>
   <body>
-
+<header class="site-header sticky-top py-1">
   <div class="p-3 mb-2 bg-dark text-white">
 
-    <h1 class="text-center"> CASA DE LA CULTURA</h1>
+    <h1 class="text-center"> CASA DE LA CULTURA </h1>
 
     <div class="position-relative">
     <ul class="nav nav-pills nav-fill">
   <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="home">INICIO</a>
+
+    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">INICIO</a>
   </li>
       <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="contacto">CONTACTO</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'contacto' %}">CONTACTO</a>
   </li>
       <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="verCursos">CURSOS</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'verCursos' %}">CURSOS</a>
   </li>
       <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="inscribirse">INSCRIBIRSE</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'inscribirse' %}">INSCRIBIRSE</a>
   </li>
       <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="quienesSomos">QUIENES SOMOS</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'quienesSomos' %}">QUIENES SOMOS</a>
   </li>
-</ul>
+  </ul>
     </div>
   </div>
+</header>
 
+<main>
+
+
+{% block content %} {% endblock %}
+
+
+</main>
+
+<footer class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+      <small class="d-block mb-3 text-muted">&copy;Todos los derechos reservados - 2021</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Cool stuff</a></li>
+        <li><a class="link-secondary" href="#">Random feature</a></li>
+        <li><a class="link-secondary" href="#">Team feature</a></li>
+        <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+        <li><a class="link-secondary" href="#">Another one</a></li>
+        <li><a class="link-secondary" href="#">Last time</a></li>
+      </ul>
+    </div>
+
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Business</a></li>
+        <li><a class="link-secondary" href="#">Education</a></li>
+        <li><a class="link-secondary" href="#">Government</a></li>
+        <li><a class="link-secondary" href="#">Gaming</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="link-secondary" href="#">Team</a></li>
+        <li><a class="link-secondary" href="#">Locations</a></li>
+        <li><a class="link-secondary" href="#">Privacy</a></li>
+        <li><a class="link-secondary" href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 
 
 
