@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import anuncio
+from .models import anuncio, inscripcion, cursos
 
 def index(request):
     anuncios=anuncio.objects.order_by('fecha_publicacion')[:]
@@ -15,9 +15,13 @@ def home(request):
 
     return HttpResponse("inicio")
 #fatima
-def cursos(request):
-
-    return  HttpResponse("cursos")
+def verCursos(request):
+    lista_cursos=cursos.objects.order_by('nombre')[:]
+    template = loader.get_template('cursos/cursos.html')
+    context = {
+        'cursos_list': lista_cursos,
+    }
+    return  HttpResponse(template.render(context, request))
 #alberto
 def inscribirse(request):
 
