@@ -49,5 +49,8 @@ def contacto(request):
 #yesica
 def quienesSomos(request):
 
-    return HttpResponse("quienes somos")
+    template = loader.get_template('cursos/quienesSomos.html')
+    context = {
 
+      }
+    return HttpResponse(template.render(context, request))
