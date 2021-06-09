@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import admin
 from django.http import HttpResponse
 from django.template import loader
 from .models import anuncio, inscripcion, cursos
@@ -53,4 +54,11 @@ def quienesSomos(request):
     context = {
 
       }
+    return HttpResponse(template.render(context, request))
+
+def admin(request):
+    template = loader.get_template('cursos/administrar.html')
+    context = {
+
+    }
     return HttpResponse(template.render(context, request))
