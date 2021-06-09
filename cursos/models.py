@@ -21,5 +21,5 @@ class inscripcion(models.Model):
 class anuncio(models.Model):
     fecha_publicacion=models.DateTimeField()
     encabezado=models.CharField(max_length=200)
-    imagen=models.FileField()
+    imagen=models.ImageField(upload_to='images/',null=True, blank=True)
     texto=models.TextField()
