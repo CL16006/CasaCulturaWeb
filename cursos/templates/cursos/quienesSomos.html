@@ -13,7 +13,12 @@
 </head>
 <body>
   <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
-    {% include "cursos/menu.html" %}
+
+    {% extends "cursos/menu.html" %}
+
+    {% block title %}quienesSomos{% endblock %}
+
+    {% block content %}
 
 
 <div class="titulo" style="background: #1094b6">
@@ -97,4 +102,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     -->
 </body>
+
 </html>
+{% endblock %}
