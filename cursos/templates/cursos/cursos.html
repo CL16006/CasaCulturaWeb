@@ -12,22 +12,38 @@
         <p class="lead">Aqui encontrara un listado de cursos disponibles en nuestra institucion, sera para nosotros
           un placer que conosca sobre los cursos que impartimos.</p>
       </div>
-      <div class="bg-light shadow-sm mx-auto text-dark" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
-          {% if cursos_list %}
-          <ul>
-              {% for curso in cursos_list %}
-              <h3>{{ curso.nombre }}</h3>
-              <h6>Fecha de inicio: {{curso.fecha_inicio}}</h6>
-              <h6>Fecha de finalizacion: {{curso.fecha_fin}}</h6>
-              <p>{{curso.descripcion}}</p>
-              {% endfor %}
-          </ul>
-          {% else %}
-          <p>No hay cursos disponibles.</p>
 
-          {% endif %}
+
+{% if cursos_list %}
+    <div class="accordion" id="accordionExample">
+        {% for curso in cursos_list %}
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{curso.nombre}}
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body text-dark">
+         <h4 class="text-dark"> {{curso.nombre}}</h4>
+          <h5>fecha de inicio: {{curso.fecha_inicio}}</h5>
+          <h5>fecha de finalizacion: {{curso.fecha_fin}}</h5>
+          <p>{{curso.descripcion}}</p>
       </div>
     </div>
+  </div>
+         {% endfor %}
+   </div>
+{% else %}
+     <div class="bg-light shadow-sm mx-auto text-dark" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;">
+         <h1>No hay cursos disponibles</h1>
+     </div>
+
+{% endif %}
+
+
+
+</div>
 </div>
 
 

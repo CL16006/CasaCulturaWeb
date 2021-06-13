@@ -1,8 +1,11 @@
 from django.shortcuts import render
 from django.contrib import admin
-from django.http import HttpResponse
+
+from django.http import HttpResponse, HttpRequest
 from django.template import loader
 from .models import anuncio, inscripcion, cursos
+from .forms import inscripcionForm
+
 
 def index(request):
     anuncios=anuncio.objects.order_by('fecha_publicacion')[:]
@@ -62,3 +65,20 @@ def admin(request):
 
     }
     return HttpResponse(template.render(context, request))
+
+
+class FormularioInscripcionView(HttpRequest):
+
+    def index(request):
+        inscripcion = inscripcionForm
+        context = {
+            'form': inscripcion
+        }
+        return render(request,'cursos/inscripcion.html',context)
+
+    def procesar_formulario(request):
+        inscripcion = inscripcionForm(request.POST)
+        if inscripcion.is_valid():
+            inscripcion.save()
+            inscripcion = inscripcionForm
+        return  render(request,'cursos/inscripcion.html',{'form':inscripcion,'mensaje':'OK'})

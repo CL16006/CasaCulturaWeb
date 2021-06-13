@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contacto</title>
-</head>
-<body>
-  <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
+ <!-- ESTA LINEA DE CODIGO NOS AGREGA EL MENU DE NAVEGACION-->
   {% extends "cursos/menu.html" %}
   {% load static %}
   {% block title %}contacto{% endblock %}
 
   {% block content %}
-    <h1 align= "center">Contacto</h1>
 
-    
+
+<div class="p-3 mb-2 bg-dark text-white">
+  <h1 align= "center">Contacto</h1>
     <div class="container" >
       <div class="row gy-5">
           <div class="p-3" style="background-color:rgb(158, 202, 223)"><h4>Direccion <img src="{% static 'ubicacion.png' %}" class="img-thumbnail" alt=""  width="35px" height="35px" align="rigth"></h4> <br> 
@@ -32,10 +26,11 @@
       
       
     </div>
+</div>
 
-    <br><h3 align="center">Ubicación</h3>
     <!--Google map-->
-<div id="map-container-google-1" class="z-depth-1-half map-container" style="height: 500px" align="center">    
+<div id="map-container-google-1" class="z-depth-1-half map-container p-3 mb-2 bg-dark text-white" style="height: 500px" align="center">
+   <h3 align="center">Ubicación</h3>
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.279490473164!2d-89.50060728636736!3d14.119654092469586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f62fb1b2b633cc5%3A0xb430a99e5f6a8b54!2sCasa%20de%20la%20Cultura%20y%20Convivencia%20de%20Texistepeque!5e0!3m2!1ses!2ssv!4v1622234490874!5m2!1ses!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" >
     style="border:0" allowfullscreen></iframe>
 
@@ -43,8 +38,4 @@
 
 <!--Google Maps-->
 
-
-    
-</body>
-</html>
 {% endblock %}

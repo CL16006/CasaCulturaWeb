@@ -1,0 +1,33 @@
+{% extends "cursos/menu.html" %}
+{% load crispy_forms_tags %}
+{% block title %}inscripcion{% endblock %}
+
+{% block content %}
+
+    {% if form.errors %}
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+    {% endif %}
+<div class="position-relative">
+<div class="p-3 mb-3 bg-dark text-white w-50">
+    <h1>Inscribirse</h1>
+    <form action="{% url 'guardarInscripcion' %}" method="POST">
+        {% csrf_token %}
+        {% if mensaje %}
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+  <div>
+   Se realizo una inscripcion exitosamente!
+  </div>
+</div>
+        {% endif %}
+
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-warning">Inscribirse</button>
+
+    </form>
+</div>
+    </div>
+
+    {% endblock %}

@@ -9,5 +9,7 @@ urlpatterns = [
     path('contacto',views.contacto,name='contacto'),
     path('inscribirse',views.inscribirse,name='inscribirse'),
     path('quienesSomos',views.quienesSomos,name='quienesSomos'),
-    path('administrar',views.admin,name='administrar')
+    path('administrar',views.admin,name='administrar'),
+    path('inscripcion',views.FormularioInscripcionView.index, name='inscripcion'),
+    path('guardarInscripcion',views.FormularioInscripcionView.procesar_formulario,name='guardarInscripcion')
     ]
