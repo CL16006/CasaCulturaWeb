@@ -20,8 +20,14 @@ class inscripcion(models.Model):
     telefono=models.IntegerField()
     curso=models.ForeignKey(cursos, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.nombres
+
 class anuncio(models.Model):
     fecha_publicacion=models.DateTimeField()
     encabezado=models.CharField(max_length=200)
     imagen=models.ImageField(upload_to='images/',null=True, blank=True)
     texto=models.TextField()
+
+    def __str__(self):
+        return self.encabezado
