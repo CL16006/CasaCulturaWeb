@@ -1,7 +1,7 @@
 from django.db import models
 from django.forms import ModelForm
 
-#Aqui estan definidos todos
+#Aqui estan definidos todos los modelos
 
 #Modelo para la tabla cursos
 class cursos(models.Model):
