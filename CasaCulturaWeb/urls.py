@@ -18,6 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+'''
+Aqui se agregan las urls de la aplicacion cursos al proyecto principal para poder ser desplegadas
+asi como las urls asociadas a archivos estaticos y multimedia como las imagenes de la base de datos.
+'''
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cursos.urls')),
